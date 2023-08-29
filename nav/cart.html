@@ -1,0 +1,95 @@
+<!doctype html> 
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384- Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- jquery -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!--External CSS-->
+        <link rel="stylesheet" type="text/css" href="./style.css">
+        <!--Internal CSS-->
+        <style>
+            .card{
+                font-weight: bold;
+            }
+        </style>
+        <title>Cart</title> 
+    </head>
+    <body class=" container-fluid bg-img">
+        <!-- dynamically loading header.html using jquery using id -->
+        <div id="header"></div>
+
+        <div class="container">
+            <!-- creating two columns(created as cards) in a row to display items and summary-->
+            <div class="row ">
+                <!--first column divided into 3 columns separately to display the item, product description and quantity details-->
+                <div class="col-lg-8 col-mg-6 col-sm-6">
+                    <div class="card" style="background-color: lightgoldenrodyellow;">
+                        <div class="card-header text-center"><h2>Items in Cart</h2></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-4 ">
+                                    <img class="img-thumbnail" src="../assets/kid4.jpg" width="200px">
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <h3>Panda dress</h3>
+                                    <h6>Rs. 900</h6>
+                                    <button class="btn btn-danger" ><i class="fa fa-trash" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="col-lg-4 text-center">
+                                    <form>
+                                        <button class="btn bg-danger"><i class="fa fa-minus"> </i> </button>
+                                        <input type="text" name="quantity" value="1" size="5" id="number" class="text-center" />
+                                        <button class="btn bg-success"><i class="fa fa-plus "></i></button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- second column displays the summary of the cart items -->
+                <div class="col-lg-4 col-mg-6 col-sm-6">
+                    <div class="card" style="background-color: lightgoldenrodyellow;">
+                        <div class="card-header text-center"><h2>Summary</h2></div>
+                        <!-- seaprately 4 rows have been created to display cost, shipping and total details and a checkout button-->
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"><p>Cost</p></div>
+                                <div class="col" ><p style="float: right;">Rs.900</p></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><p>Shipping</p></div>
+                                <div class="col" ><p style="float: right;">Rs.99</p></div>
+                            </div>
+                            <hr style="border:2px solid black;">
+                            <div class="row">
+                                <div class="col"><p>Total</p></div>
+                                <div class="col" ><p style="float: right;">Rs.999</p></div>
+                            </div>
+                            <div class="row text-center">
+                                <div class="col"></div>
+                                <div class="col"><button class="btn btn-success">Checkout</button></div>
+                                <div class="col"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- dynamically loading footer.html using jquery using id -->
+        <div id="footer"></div> 
+
+       <!-- dynamically loading header.html and footer.html using jquery using id -->
+        <script>
+            $(function(){
+                $("#header").load("../nav/header.html");
+                $("#footer").load("../nav/footer.html");
+            })
+            
+        </script>
+    </body>
+</html>
